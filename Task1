@@ -46,3 +46,26 @@ ax.set_title('Diabete ?')
 plt.tight_layout()
 plt.show()
 
+#plot for pregnancies
+figure, axes = plt.subplots(figsize=(12,6))
+figure = sns.histplot(data=df, x="Pregnancies", hue="Outcome", multiple="stack", kde=True)
+figure.set_title('Distribution of Pregnancies per group')
+plt.show()
+
+## Plot for glucose
+figure, axes = plt.subplots(figsize=(12,6))
+figure = sns.histplot(data=df, x="BloodPressure", hue="Outcome", multiple="stack", kde=True)
+figure.set_title('Distribution of BloodPressure per group')
+plt.show()
+
+## Plot for insulin
+figure, axes = plt.subplots(figsize=(12,6))
+figure = sns.histplot(data=df, x="Insulin", hue="Outcome", multiple="stack", kde=True)
+figure.set_title('Distribution of Insulin per group')
+plt.show()
+
+## Plot for BMI
+figure, axes = plt.subplots(figsize=(12,6))
+figure = sns.histplot(data=df, x="BMI", hue="Outcome", multiple="stack", kde = True)
+figure.set_title('Distribution of BMI per group')
+plt.show()
