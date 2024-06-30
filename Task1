@@ -31,3 +31,18 @@ sns.distplot(df.SkinThickness, bins = 20, ax=ax[2,0])
 sns.distplot(df.Insulin, bins = 20, ax=ax[2,1])
 sns.distplot(df.DiabetesPedigreeFunction, bins = 20, ax=ax[3,0]) 
 sns.distplot(df.BMI, bins = 20, ax=ax[3,1]) 
+
+#Basics statistics : summarize dataset with descriptives statistics
+df.describe()
+
+# TARGET : Diabete or not ?
+targets = df.loc[:, "Outcome"].unique()
+numberTargerts = df.loc[:, "Outcome"].value_counts().values
+#Plot
+fig, ax = plt.subplots()
+labels = ["Yes", "No"]
+ax.pie(numberTargerts, labels = labels, autopct = '%1.1f%%') 
+ax.set_title('Diabete ?')
+plt.tight_layout()
+plt.show()
+
